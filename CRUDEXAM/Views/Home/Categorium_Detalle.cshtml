@@ -1,0 +1,53 @@
+﻿@model CRUDEXAM.Models.ViewModels.CategoriaVM
+@{
+    ViewData["Title"] = "Categorium_Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.oCategorium.IdCategoria == 0)
+{
+        <h1>Crear Categoria</h1>
+}
+else
+{
+        <h1>Editar Categoria</h1>
+}
+
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Categorium_Detalle" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="oCategorium.IdCategoria" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oCategorium.NombreCat">Nombre Categoria</label>
+                <input class="form-control form-control-sm" asp-for="oCategorium.NombreCat" type="text" />
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oCategorium.DescripcionCat">Descripcion de Categoria</label>
+                <input class="form-control form-control-sm" asp-for="oCategorium.DescripcionCat" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oCategorium.FechaCreacionCat">Fecha de Creacion de Categoria</label>
+                <input class="form-control form-control-sm" asp-for="oCategorium.FechaCreacionCat" type="text" disabled />
+            </div>
+
+
+            <div class="mb-2">
+                @if (Model.oCategorium.IdCategoria == 0)
+                {
+                        <button class="btn btn-primary btn-sm m-25" type="submit">Crear</button>
+                }
+                else
+                {
+                        <button class="btn btn-primary btn-sm m-25" type="submit">Actualizar</button>
+                }
+                <a class="btn btn-dark btn-sm" asp-action="Privacy" asp-controller="Home">Volver</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+

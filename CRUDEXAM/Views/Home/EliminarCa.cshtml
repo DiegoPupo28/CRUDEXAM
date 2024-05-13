@@ -1,0 +1,41 @@
+﻿@model CRUDEXAM.Models.Categorium
+@{
+    ViewData["Title"] = "EliminarCa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">¿Está seguro de eliminar Categoria?</h3>
+<hr />
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Eliminar" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="IdCategoria" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="NombreCat">Nombre Categoria</label>
+                <input class="form-control form-control-sm" asp-for="NombreCat" type="text" disabled />
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="DescripcionCat">Descripcion de Categoria</label>
+                <input class="form-control form-control-sm" asp-for="DescripcionCat" type="text" disabled />
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="FechaCreacionCat">Fecha de Creacion</label>
+                <input class="form-control form-control-sm" asp-for="FechaCreacionCat" type="text" disabled />
+            </div>
+
+           
+            <div class="mb-2">
+                <button class="btn btn-danger btn-sm m-25" type="submit">Eliminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="Privacy" asp-controller="Home">Volver</a>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
